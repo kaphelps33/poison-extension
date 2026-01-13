@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "Poision",
+    "name": "Poison",
     "version": "0.0.1",
 
-    "description": "Poisions YouTube for productivity reasons. Delays the page loading, more features soon...",
+    "description": "'Poisons' YouTube for productivity reasons. Delays the page loading, more features soon...",
 
     "icons": {
         "48": "icons/icon.png"
@@ -13,14 +13,14 @@
 
     "browser_action": {
         "default_icon": "icons/icon.png",
-        "default_title": "Poision",
+        "default_title": "Poison",
         "default_popup": "popup/main.html"
     },
 
     "content_scripts": [
         {
             "matches": ["*://*.youtube.com/*"],
-            "js": ["poision.js"]
+            "js": ["poison.js"]
         }
     ]
 }
