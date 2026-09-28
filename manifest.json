@@ -19,8 +19,10 @@
 
     "content_scripts": [
         {
+            "js": ["/content_scripts/poison.js"],
+            "all_frames": true,
             "matches": ["*://*.youtube.com/*"],
-            "js": ["poison.js"]
+            "run_at": "document_start"
         }
     ]
 }
