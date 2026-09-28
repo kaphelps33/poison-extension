@@ -22,7 +22,7 @@
             "js": ["/content_scripts/poison.js"],
             "all_frames": true,
             "matches": ["*://*.youtube.com/*"],
-            "run_at": "document_start"
+            "run_at": "document_idle"
         }
     ]
 }
