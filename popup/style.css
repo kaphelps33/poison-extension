@@ -1,5 +1,27 @@
-html, body {
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --light-purple: #e4d9ff;
+  --dark-purple: #273469;
+  --dark-dark-purple: #1e2749;
+  --white: #fafaff;
+  --black: #30343f;
+}
+
+html,
+body {
   width: 200px;
+  background-color: var(--light-purple);
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  color: var(--black);
+  text-align: center;
+}
+
+header {
+  display: inline;
 }
 
 .hidden {
