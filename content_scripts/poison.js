@@ -1,17 +1,26 @@
-let recommendedVideos;
-let nextUpVideos;
+const hideElement = (element) => {
+  if (element == null) {
+    return;
+  } else {
+    element.setAttribute("hidden", true);
+  }
+};
 
-//nextUpVideos = document.querySelector(".style-scope ytd-watch-next-secondary-results-renderer");
+const cleanHomepage = () => {
+  const recommendedVideos = document.querySelector("ytd-browse");
+  hideElement(recommendedVideos);
+};
+
+const removeRecommended = () => {
+  const nextUpVideos = document.querySelector("#secondary");
+  hideElement(nextUpVideos);
+};
 
 const callback = (mutationList, observer) => {
   for (const mutation of mutationList) {
     if (mutation.type === "childList") {
-      recommendedVideos = document.querySelector("ytd-browse");
-      if (recommendedVideos == null) {
-        return;
-      } else {
-        recommendedVideos.setAttribute("hidden", true);
-      }
+      cleanHomepage();
+      removeRecommended();
     }
   }
 };
