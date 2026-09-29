@@ -2,7 +2,7 @@ const hideElement = (element) => {
   if (element == null) {
     return;
   } else {
-    element.setAttribute("hidden", true);
+    element.style.setProperty("display", "none", "important");
   }
 };
 
@@ -12,8 +12,15 @@ const cleanHomepage = () => {
 };
 
 const removeRecommended = () => {
-  const nextUpVideos = document.querySelector("#secondary");
-  hideElement(nextUpVideos);
+  const recommended = document.querySelectorAll("#secondary, #related");
+  recommended.forEach((section) => {
+    hideElement(section);
+  });
+};
+
+const removeShortsButton = () => {
+  const shortsButton = document.querySelector('[title="Shorts"]');
+  hideElement(shortsButton);
 };
 
 const callback = (mutationList, observer) => {
@@ -21,6 +28,7 @@ const callback = (mutationList, observer) => {
     if (mutation.type === "childList") {
       cleanHomepage();
       removeRecommended();
+      removeShortsButton();
     }
   }
 };
