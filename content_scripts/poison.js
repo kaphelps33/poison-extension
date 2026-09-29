@@ -23,12 +23,21 @@ const removeShortsButton = () => {
   hideElement(shortsButton);
 };
 
+/**
+ * Removes shorts player to prevent user from going to shorts via URL
+ */
+const removeShorts = () => {
+  const shortsPlayer = document.querySelector("#shorts-container");
+  hideElement(shortsPlayer);
+};
+
 const callback = (mutationList, observer) => {
   for (const mutation of mutationList) {
     if (mutation.type === "childList") {
       cleanHomepage();
       removeRecommended();
       removeShortsButton();
+      removeShorts();
     }
   }
 };
