@@ -31,6 +31,11 @@ const removeShorts = () => {
   hideElement(shortsPlayer);
 };
 
+const hideComments = () => {
+  const commentContainer = document.querySelector("#comments");
+  hideElement(commentContainer);
+};
+
 const callback = (mutationList, observer) => {
   for (const mutation of mutationList) {
     if (mutation.type === "childList") {
@@ -38,6 +43,7 @@ const callback = (mutationList, observer) => {
       removeRecommended();
       removeShortsButton();
       removeShorts();
+      hideComments();
     }
   }
 };
