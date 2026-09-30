@@ -53,25 +53,6 @@ const hideComments = () => {
   hideElement(commentContainer);
 };
 
-// HTML5 video element
-const video = document.querySelector(".html5-main-video");
-// State that indicates first play or not. Always true at start
-let isFirstPlay = true;
-
-video.onplay = (event) => {
-  videoURL = window.location.href;
-  if (isFirstPlay == true) {
-    alert("You are supposed to be working!");
-    // no longer the first play, thus change state
-    isFirstPlay = false;
-  }
-};
-
-// if user navigates to another video, first play is reset
-window.addEventListener("yt-navigate-start", (event) => {
-  isFirstPlay = true;
-});
-
 const callback = (mutationList, observer) => {
   for (const mutation of mutationList) {
     if (mutation.type === "childList") {
@@ -108,3 +89,25 @@ const config = {
 };
 
 observer.observe(document.body, config);
+
+// HTML5 video element
+const video = document.querySelector(".html5-main-video");
+// State that indicates first play or not. Always true at start
+let isFirstPlay = true;
+
+if (video != null) {
+  video.autoplay = false;
+  video.onplay = (event) => {
+    videoURL = window.location.href;
+    if (isFirstPlay == true) {
+      alert("You are supposed to be working!");
+      // no longer the first play, thus change state
+      isFirstPlay = false;
+    }
+  };
+}
+
+// if user navigates to another video, first play is reset
+window.addEventListener("yt-navigate-start", (event) => {
+  isFirstPlay = true;
+});
