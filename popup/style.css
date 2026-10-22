@@ -9,10 +9,24 @@
 
 html,
 body {
-  width: 200px;
+  height: 100%;
+  width: 400px;
+}
+
+body {
   background-color: var(--light-purple);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
 }
 
 h1 {
@@ -20,8 +34,38 @@ h1 {
   text-align: center;
 }
 
-header {
-  display: inline;
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container > h1 > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-container > h1:hover {
+  color: var(--dark-dark-purple);
+  cursor: pointer;
+}
+
+.icon-image {
+  max-width: 50%;
+  height: 50%;
+}
+
+.mode-selection {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
 .hidden {

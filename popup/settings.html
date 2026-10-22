@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div id="popup-content">
+    <header>
+      <div class="logo-container">
+        <img src="/icons/icon.png" alt="Poison logo" class="icon-image">
+        <h1>
+          <a href="main.html">Poison</a>
+        </h1>
+      </div>
+      <p>Keeping you on task by making other things so miserable, you no longer want to do them!</p>
+    </header>
+    <main>
+      <h2>Settings</h2>
+      <h3>Difficulty</h3>
+
+      <form action="">
+        <p>Select how miserable your watching experience will be!</p>
+        <ol>
+          <li>
+            <input type="radio" name="mode" id="mode-easy" value="easy">
+            <label for="mode-easy">Easy</label>
+            <p>Videos are in black and white, short form content is blocked!</p>
+          </li>
+          <li>
+            <input type="radio" name="mode" id="mode-medium" value="medium">
+            <label for="mode-medium">Devoted</label>
+            <p>All disruptions from easy <b>plus</b> no more recommended videos on the home screen or after a video! No
+              more comments either!</p>
+          </li>
+          <li>
+            <input type="radio" name="mode" id="mode-hard" value="hard">
+            <label for="hard">Hard</label>
+            <p>All disruptions from easy and devoted <b>plus</b> a filter over the video that makes the audio unpleasant
+              to hear!</p>
+          </li>
+        </ol>
+        <b>Caution!</b>
+        <p>Upon selecting a mode you <b>cannot</b> undo it without passing a test! You <b>can</b> move up in modes
+          without a test, but you <b>cannot</b> move down!</p>
+        <button type="submit">Confirm</button>
+      </form>
+    </main>
+    <footer>
+      <p>Created by <a href="">kaphelps</a></p>
+    </footer>
+  </div>
+  <div id="error-content" class="hidden">
+    <p>Some type of error has occurred.</p>
+  </div>
+  <script src="../content_scripts/background.js" defer></script>
+</body>
+
+</html>
